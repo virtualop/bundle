@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd /usr/lib/vop/bin
+./vop.sh
+cd - >/dev/null

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+LOG_FILE=/var/log/vop-post-install.log
+
+echo "vop post installation: bundle install..." | tee -a $LOG_FILE
+
+# TODO useradd marvin
+
+cd /usr/lib/vop
+# su marvin ?
+bundle install --deployment
+echo "post installation complete (`date`)." | tee -a $LOG_FILE
