@@ -1,13 +1,17 @@
 #!/bin/bash
 
-DEBIAN_DIR=$( cd $(dirname "${BASH_SOURCE[0]}") && pwd )
-BUNDLE_DIR=$( cd "$DEBIAN_DIR/.." && pwd )
-VOP_ROOT=$( cd "$BUNDLE_DIR/../vop" && pwd )
-echo "vop root : $VOP_ROOT"
-TARGET_DIR=$DEBIAN_DIR/vop
-echo "target dir : $TARGET_DIR"
+set -euo pipefail
+IFS=$'\n\t'
 
-VOP_TARGET=$TARGET_DIR/usr/lib/vop
+DEBIAN_DIR=$( cd $(dirname "${BASH_SOURCE[0]}") && pwd )
+VOP_ROOT=$( cd "$DEBIAN_DIR/../../vop" && pwd )
+VOP_TARGET=$DEBIAN_DIR/vop/usr/lib/vop
+echo "vop root : $VOP_ROOT"
+echo "target dir : $VOP_TARGET"
+
 mkdir -p $VOP_TARGET
-cd $VOP_ROOT && \
-  cp -r bin exe Gemfile* lib Rakefile vendor *.gemspec $VOP_TARGET
+cd $VOP_ROOT
+cp -r bin exe Gemfile* lib Rakefile vendor *.gemspec $VOP_TARGET
+
+cd $DEBIAN_DIR
+dpkg-deb --build vop

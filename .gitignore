@@ -1,4 +1,5 @@
 debian/vop/usr/lib
+debian/*.deb
 
 *.gem
 *.rbc
