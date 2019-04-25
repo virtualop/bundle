@@ -1,3 +1,5 @@
+debian/vop/usr/lib
+
 *.gem
 *.rbc
 /.config
