@@ -1,0 +1,58 @@
+PATH
+  remote: .
+  specs:
+    virtualop (0.3.6)
+      vop (~> 0)
+      vop-plugins (~> 0)
+
+PATH
+  remote: ../plugins
+  specs:
+    vop-plugins (0.3.6)
+
+PATH
+  remote: ../vop
+  specs:
+    vop (0.3.6)
+      net-scp
+      net-ssh
+      redis
+      sidekiq
+      terminal-table
+      xml-simple
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    concurrent-ruby (1.0.5)
+    connection_pool (2.2.2)
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (5.0.2)
+    rack (2.0.6)
+    rack-protection (2.0.3)
+      rack
+    rake (10.5.0)
+    redis (4.0.1)
+    sidekiq (5.1.3)
+      concurrent-ruby (~> 1.0)
+      connection_pool (~> 2.2, >= 2.2.0)
+      rack-protection (>= 1.5.0)
+      redis (>= 3.3.5, < 5)
+    terminal-table (1.8.0)
+      unicode-display_width (~> 1.1, >= 1.1.1)
+    unicode-display_width (1.4.0)
+    xml-simple (1.1.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.15)
+  rake (~> 10.0)
+  virtualop!
+  vop!
+  vop-plugins!
+
+BUNDLED WITH
+   1.17.1

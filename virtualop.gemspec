@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "virtualop"
-  spec.version       = "0.3.4"
+  spec.version       = "0.3.6"
   spec.authors       = ["Philipp T."]
   spec.email         = ["philipp@hitchhackers.net"]
 
@@ -22,16 +22,17 @@ Gem::Specification.new do |spec|
       "public gem pushes."
   end
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
   spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+  if File.exists? ".git"
+    spec.files         = `git ls-files -z`.split("\x0").reject do |f|
+      f.match(%r{^(test|spec|features)/})
+    end
+    spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  end
 
-  spec.add_dependency "vop"
-  spec.add_dependency "vop-plugins"
-  spec.add_dependency "vop-services"
+  spec.add_dependency "vop", '~> 0'
+  spec.add_dependency "vop-plugins", '~> 0'
 
   spec.add_development_dependency "bundler", "~> 1.15"
   spec.add_development_dependency "rake", "~> 10.0"
