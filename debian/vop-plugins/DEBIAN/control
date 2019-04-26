@@ -1,0 +1,6 @@
+Package: vop-plugins
+Version: 0.3.6
+Maintainer: Philipp T.
+Architecture: all
+Description: virtualop plugins
+Depends: vop
