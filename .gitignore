@@ -1,5 +1,6 @@
 debian/vop/usr/lib
 debian/*.deb
+vendor
 
 *.gem
 *.rbc
