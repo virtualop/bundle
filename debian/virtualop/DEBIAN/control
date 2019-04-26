@@ -1,0 +1,6 @@
+Package: virtualop
+Version: 0.3.6
+Maintainer: Philipp T.
+Architecture: all
+Description: VirtualOp bundle package (core + plugins)
+Depends: vop, vop-plugins
