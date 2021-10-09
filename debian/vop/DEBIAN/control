@@ -3,4 +3,4 @@ Version: 0.3.6
 Maintainer: Philipp T.
 Architecture: all
 Description: VirtualOp scripting framework
-Depends: git, ruby, ruby-dev, ruby-bundler, build-essential, redis-server, openssh-server
+Depends: git, ruby, ruby-dev, bundler, build-essential, redis-server, openssh-server
