@@ -4,6 +4,7 @@ PATH
     vop-plugins (0.3.6)
       passgen
       vault
+      vop (>= 0.3.6)
       xml-simple
 
 PATH
